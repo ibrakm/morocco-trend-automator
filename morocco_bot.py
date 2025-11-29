@@ -33,6 +33,8 @@ class MoroccoTrendBot:
             self.perplexity = PerplexityService()
             self.gemini = GeminiService()
             self.image_service = ImageService()
+            self.ai_image_service = ProfessionalImageService()  # AI-powered image generation
+            self.professional_image_service = ProfessionalImageService()  # Professional templates
             # OpenAI is optional fallback service
             try:
                 self.openai = OpenAIService()
