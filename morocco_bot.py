@@ -13,8 +13,8 @@ from config import Config
 from perplexity_service import PerplexityService
 from gemini_service import GeminiService
 from image_service import ImageService
-from enhanced_image_service import EnhancedImageService
-from ai_image_service import AIImageService
+# from enhanced_image_service import EnhancedImageService
+# from ai_image_service import AIImageService
 from professional_image_service import ProfessionalImageService
 from openai_service import OpenAIService
 from linkedin_service import LinkedInService
