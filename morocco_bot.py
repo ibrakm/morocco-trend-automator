@@ -33,9 +33,15 @@ class MoroccoTrendBot:
             self.perplexity = PerplexityService()
             self.gemini = GeminiService()
             self.image_service = ImageService()
-            self.openai = OpenAIService()
+            # OpenAI is optional fallback service
+            try:
+                self.openai = OpenAIService()
+                error_handler.logger.info("✅ OpenAI service initialized")
+            except Exception as e:
+                self.openai = None
+                error_handler.logger.warning(f"⚠️ OpenAI service not available: {e}")
             self.linkedin = LinkedInService()
-            error_handler.logger.info("✅ All services initialized!")
+            error_handler.logger.info("✅ All required services initialized!")
         except Exception as e:
             error_handler.log_error(e, {"phase": "initialization"})
             raise
