@@ -2,3 +2,4 @@ google-generativeai
 pillow
 cryptography
 requests
+openai
