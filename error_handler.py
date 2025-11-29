@@ -15,8 +15,10 @@ import os
 class ErrorHandler:
     """Centralized error handling and logging"""
     
-    def __init__(self, log_dir: str = "/home/ubuntu/morocco-bot"):
+    def __init__(self, log_dir: str = "./logs"):
         self.log_dir = log_dir
+        # Create log directory if it doesn't exist
+        os.makedirs(log_dir, exist_ok=True)
         self.error_log_file = os.path.join(log_dir, "errors.json")
         self.setup_logging()
         
